@@ -1,0 +1,246 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "groupId" : "c5c5d686-64aa-3bf0-834d-5e54927b810d",
+            "id" : "8ad49e36-ff1e-3436-b223-d47473c2ebe7",
+            "instanceIdentifier" : "7ab811e9-ec30-3745-9b42-5a96392faf6f",
+            "name" : "From Minifi",
+            "type" : "REMOTE_INPUT_PORT"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "b216162c-995e-300f-b847-6b5affb355ae",
+          "identifier" : "6d7addaf-9391-3a15-a4ce-7f74fc92934f",
+          "instanceIdentifier" : "b14c9e77-018d-1000-554c-a7c65e2e07b4",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "b216162c-995e-300f-b847-6b5affb355ae",
+            "id" : "df4973e0-2588-3773-a6ac-031382e2f098",
+            "instanceIdentifier" : "b14acca1-018d-1000-21f9-4196b849535b",
+            "name" : "GetSmbFile",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "defaultBackPressureDataSizeThreshold" : "1 GB",
+        "defaultBackPressureObjectThreshold" : 10000,
+        "defaultFlowFileExpiration" : "0 sec",
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "b216162c-995e-300f-b847-6b5affb355ae",
+        "inputPorts" : [ ],
+        "instanceIdentifier" : "b14ce64d-018d-1000-3de3-ab3257651b37",
+        "labels" : [ ],
+        "name" : "SambaConnection",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 184.0,
+          "y" : 48.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-smb-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.24.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "b216162c-995e-300f-b847-6b5affb355ae",
+          "identifier" : "df4973e0-2588-3773-a6ac-031382e2f098",
+          "instanceIdentifier" : "b14acca1-018d-1000-21f9-4196b849535b",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "GetSmbFile",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 232.0,
+            "y" : -32.0
+          },
+          "properties" : {
+            "Keep Source File" : "false",
+            "Polling Interval" : "0 sec",
+            "Share Access Strategy" : "none",
+            "Hostname" : "sambaconnect",
+            "Recurse Subdirectories" : "true",
+            "smb-dialect" : "AUTO",
+            "use-encryption" : "false",
+            "Username" : "mendixuser",
+            "Batch Size" : "10",
+            "Ignore Hidden Files" : "true",
+            "Share" : "scantest"
+          },
+          "propertyDescriptors" : {
+            "Keep Source File" : {
+              "displayName" : "Keep Source File",
+              "identifiesControllerService" : false,
+              "name" : "Keep Source File",
+              "sensitive" : false
+            },
+            "Polling Interval" : {
+              "displayName" : "Polling Interval",
+              "identifiesControllerService" : false,
+              "name" : "Polling Interval",
+              "sensitive" : false
+            },
+            "Share Access Strategy" : {
+              "displayName" : "Share Access Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Share Access Strategy",
+              "sensitive" : false
+            },
+            "Hostname" : {
+              "displayName" : "Hostname",
+              "identifiesControllerService" : false,
+              "name" : "Hostname",
+              "sensitive" : false
+            },
+            "Recurse Subdirectories" : {
+              "displayName" : "Recurse Subdirectories",
+              "identifiesControllerService" : false,
+              "name" : "Recurse Subdirectories",
+              "sensitive" : false
+            },
+            "File Filter" : {
+              "displayName" : "File Filter",
+              "identifiesControllerService" : false,
+              "name" : "File Filter",
+              "sensitive" : false
+            },
+            "Path Filter" : {
+              "displayName" : "Path Filter",
+              "identifiesControllerService" : false,
+              "name" : "Path Filter",
+              "sensitive" : false
+            },
+            "smb-dialect" : {
+              "displayName" : "SMB Dialect",
+              "identifiesControllerService" : false,
+              "name" : "smb-dialect",
+              "sensitive" : false
+            },
+            "use-encryption" : {
+              "displayName" : "Use Encryption",
+              "identifiesControllerService" : false,
+              "name" : "use-encryption",
+              "sensitive" : false
+            },
+            "Username" : {
+              "displayName" : "Username",
+              "identifiesControllerService" : false,
+              "name" : "Username",
+              "sensitive" : false
+            },
+            "Batch Size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Batch Size",
+              "sensitive" : false
+            },
+            "Ignore Hidden Files" : {
+              "displayName" : "Ignore Hidden Files",
+              "identifiesControllerService" : false,
+              "name" : "Ignore Hidden Files",
+              "sensitive" : false
+            },
+            "Domain" : {
+              "displayName" : "Domain",
+              "identifiesControllerService" : false,
+              "name" : "Domain",
+              "sensitive" : false
+            },
+            "Share" : {
+              "displayName" : "Share",
+              "identifiesControllerService" : false,
+              "name" : "Share",
+              "sensitive" : false
+            },
+            "Directory" : {
+              "displayName" : "Directory",
+              "identifiesControllerService" : false,
+              "name" : "Directory",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : true
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.smb.GetSmbFile",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ {
+          "comments" : "",
+          "communicationsTimeout" : "30 sec",
+          "componentType" : "REMOTE_PROCESS_GROUP",
+          "groupIdentifier" : "b216162c-995e-300f-b847-6b5affb355ae",
+          "identifier" : "c5c5d686-64aa-3bf0-834d-5e54927b810d",
+          "inputPorts" : [ {
+            "batchSize" : { },
+            "componentType" : "REMOTE_INPUT_PORT",
+            "concurrentlySchedulableTaskCount" : 1,
+            "groupIdentifier" : "c5c5d686-64aa-3bf0-834d-5e54927b810d",
+            "identifier" : "8ad49e36-ff1e-3436-b223-d47473c2ebe7",
+            "instanceIdentifier" : "7ab811e9-ec30-3745-9b42-5a96392faf6f",
+            "name" : "From Minifi",
+            "remoteGroupId" : "c5c5d686-64aa-3bf0-834d-5e54927b810d",
+            "scheduledState" : "ENABLED",
+            "targetId" : "b14bd3ed-018d-1000-d5ab-580bb8f3837f",
+            "useCompression" : false
+          } ],
+          "instanceIdentifier" : "b14c83ed-018d-1000-d319-44305e878c75",
+          "name" : "NiFi Flow",
+          "outputPorts" : [ ],
+          "position" : {
+            "x" : 232.0,
+            "y" : 312.0
+          },
+          "proxyHost" : "",
+          "proxyUser" : "",
+          "targetUri" : "http://nifihost:8443/nifi",
+          "targetUris" : "http://nifihost:8443/nifi",
+          "transportProtocol" : "RAW",
+          "yieldDuration" : "10 sec"
+        } ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { },
+      "parameterProviders" : { }
+    }
+  }
+}
